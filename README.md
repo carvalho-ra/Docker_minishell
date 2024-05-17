@@ -6,8 +6,10 @@ Minishell in a container...studing docker.
 Compile the project using the provided Makefile: ```make```
 
 ### Install docker:
-sudo apt-get update -y && apt-get upgrade -y 
-sudo apt-get install docker docker-compose
+```sudo apt-get update -y && apt-get upgrade -y```
+```sudo apt-get install docker docker-compose```
+
+
 
 ##
 make run - builds the image and runs a container;
