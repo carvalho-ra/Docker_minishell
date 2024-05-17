@@ -4,10 +4,10 @@ Minishell in a container...studing docker.
 ### 🛠️ Usage
 
 #### Install docker:
-```sudo apt-get update -y && apt-get upgrade -y```
+```sudo apt-get update -y && apt-get upgrade -y``` <br>
 ```sudo apt-get install docker docker-compose```
 
-#### Run commands:
+#### Run commands:<br>
 ```make run``` - builds the image and runs a container;<br>
 ```make down``` - stops container;<br>
 ```make clean``` - stops and delete container<br>
