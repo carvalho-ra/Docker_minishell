@@ -1,7 +1,11 @@
 # Docker_minishell
 Minishell in a container...studing docker. 
 
-## Install docker:
+### 🛠️ Usage
+
+Compile the project using the provided Makefile: ```make```
+
+### Install docker:
 sudo apt-get update -y && apt-get upgrade -y 
 sudo apt-get install docker docker-compose
 
