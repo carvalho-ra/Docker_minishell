@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  minishell:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    container_name: docker_minishell
+    stdin_open: true
+    tty: true
