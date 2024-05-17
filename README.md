@@ -3,18 +3,14 @@ Minishell in a container...studing docker.
 
 ### 🛠️ Usage
 
-Compile the project using the provided Makefile: ```make```
-
-### Install docker:
+#### Install docker:
 ```sudo apt-get update -y && apt-get upgrade -y```
 ```sudo apt-get install docker docker-compose```
 
-
-
-##
-make run - builds the image and runs a container;
-make down - stops container;
-make clean - stops and delete container
-make rebuild - stops and deletes containers and images and buils another image;
-make fclean - deepclean project (deletes container and images);
+#### Run commands:
+```make run``` - builds the image and runs a container;<br>
+```make down``` - stops container;<br>
+```make clean``` - stops and delete container<br>
+```make rebuild``` - stops and deletes containers and images and buils another image;<br>
+```make fclean``` - deepclean project (deletes container and images).
 
