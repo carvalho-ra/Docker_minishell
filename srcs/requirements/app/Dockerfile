@@ -8,10 +8,10 @@ RUN apt-get update && apt-get upgrade -y && \
     rm -rf /var/lib/apt/lists/*
 
 # Copy the minishell script to the root directory of the container
-COPY ./app/minishell /minishell
+COPY ./requirements/app/minishell /minishell
 
 # Make sure the minishell script is executable
-RUN chmod +x /minishell
+RUN chmod -R +x /minishell
 
 # Set the command to execute the minishell script
 CMD ["bash", "-c", "/minishell"]

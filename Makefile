@@ -1,29 +1,24 @@
-# Nome da imagem e do container
 IMAGE_NAME = docker_minishell_image
 CONTAINER_NAME = docker_minishell_container
 
-# Alvo para construir a imagem Docker
+all: run
+
 build:
-	docker build -t $(IMAGE_NAME) .
+	@docker-compose -f ./srcs/docker-compose.yml up -d --build
 
-# Alvo para rodar o container com o terminal interativo
 run: build
-	docker run -it --name $(CONTAINER_NAME) $(IMAGE_NAME)
+	@docker-compose -f ./srcs/docker-compose.yml run minishell
 
-# Alvo para parar o container
 down:
-	docker container stop $(CONTAINER_NAME) || true
+	@docker-compose -f ./srcs/docker-compose.yml stop || true
 
-# Alvo para remover o container
 clean: down
-	docker rm $(CONTAINER_NAME) || true
+	@docker-compose -f ./srcs/docker-compose.yml rm -f || true
 
-# Alvo para reconstruir e rodar o container
 rebuild: clean build run
 
-# Alvo para limpeza profunda
 fclean: clean
-	docker system prune -a
+	docker system prune -af
 
 PHONY: build run down clean rebuild fclean
 

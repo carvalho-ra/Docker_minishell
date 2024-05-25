@@ -4,7 +4,7 @@ services:
   minishell:
     build:
       context: .
-      dockerfile: ./Dockerfile
+      dockerfile: ./requirements/app/Dockerfile
     container_name: docker_minishell
     stdin_open: true
     tty: true
