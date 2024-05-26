@@ -5,7 +5,7 @@ all: run
 build:
 	@docker-compose -f ./srcs/docker-compose.yml build
 
-run: build
+run: down build
 	@docker-compose -f ./srcs/docker-compose.yml run --name $(CONTAINER_NAME) minishell
 
 down:
