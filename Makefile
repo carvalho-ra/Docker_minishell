@@ -11,13 +11,10 @@ run: build
 down:
 	@docker-compose -f ./srcs/docker-compose.yml down || true
 
-clean: down
-	@docker-compose -f ./srcs/docker-compose.yml rm -f || true
+re: down run
 
-rebuild: clean build run
-
-fclean: clean
+fclean: down
 	docker system prune -af
 
-PHONY: build run down clean rebuild fclean
+PHONY: all build run down re fclean
 
