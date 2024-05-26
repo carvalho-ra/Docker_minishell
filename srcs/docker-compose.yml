@@ -5,6 +5,6 @@ services:
     build:
       context: .
       dockerfile: ./requirements/app/Dockerfile
-    container_name: docker_minishell
-    stdin_open: true
-    tty: true
+    image: srcs_minishell
+    container_name: docker_minishell_container
+    command: bash -c /minishell
