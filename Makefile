@@ -5,7 +5,9 @@ all: run
 build:
 	@docker-compose -f ./srcs/docker-compose.yml build
 
-run: down build
+run: build
+	@docker ps -aq --filter "name=$(CONTAINER_NAME)" | grep . \
+	&& docker-compose -f ./srcs/docker-compose.yml down || true
 	@docker-compose -f ./srcs/docker-compose.yml run --name $(CONTAINER_NAME) minishell
 
 down:
