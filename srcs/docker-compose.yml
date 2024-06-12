@@ -8,3 +8,10 @@ services:
     image: docker_minishell_image
     container_name: docker_minishell_container
     command: bash -c /minishell
+    networks:
+      - minishell
+
+networks:
+    minishell:
+        name: minishell_network
+        driver: bridge
