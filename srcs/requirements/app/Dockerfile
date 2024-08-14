@@ -3,7 +3,7 @@ FROM debian:latest
 
 # Ensure the package list is updated, install necessary packages, and clean up
 RUN apt-get update && apt-get upgrade -y && \
-    apt-get install -y bash libreadline8 && \
+    apt-get install -y bash libreadline-dev libreadline8 && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
