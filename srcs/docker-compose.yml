@@ -3,9 +3,10 @@ services:
     build:
       context: .
       dockerfile: ./requirements/app/Dockerfile
-    image: docker_minishell_image
-    container_name: docker_minishell_container
-    command: bash -c /minishell
+    ports:
+      - "5000:5000"
+    image: minishell
+    container_name: minishell
     networks:
       - minishell
 
