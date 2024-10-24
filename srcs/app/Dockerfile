@@ -7,10 +7,8 @@ RUN apt-get update && apt-get upgrade -y && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-ENV TERM xterm
-
 # Copy the minishell script to the root directory of the container
-COPY ./requirements/app/minishell /minishell
+COPY ./app/minishell /minishell
 
 # Make sure the minishell script is executable
 RUN chmod -R +x /minishell

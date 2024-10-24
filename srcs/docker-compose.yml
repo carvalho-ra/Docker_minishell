@@ -2,7 +2,7 @@ services:
   minishell:
     build:
       context: .
-      dockerfile: ./requirements/app/Dockerfile
+      dockerfile: ./app/Dockerfile
     image: minishell
     networks:
       - minishell
