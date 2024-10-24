@@ -1,4 +1,4 @@
-.DEFAUT_GOAL = all
+.DEFAULT_GOAL = all
 
 docker:
 	@if ! command -v docker >/dev/null 2>&1; then \
