@@ -2,11 +2,11 @@ services:
   minishell:
     build:
       context: .
-      dockerfile: ./requirements/app/Dockerfile
-    ports:
-      - "5000:5000"
+      dockerfile: ./app/Dockerfile
     image: minishell
     container_name: minishell
+    ports:
+      - "7681:7681"
     networks:
       - minishell
 

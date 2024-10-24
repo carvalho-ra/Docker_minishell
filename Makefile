@@ -1,6 +1,7 @@
 
 all: 
-	@docker compose -f ./srcs/docker-compose.yml up --build
+	@docker compose -f ./srcs/docker-compose.yml up -d
+	@echo "http://localhost:7681"
 
 build:
 	@docker compose -f ./srcs/docker-compose.yml build
