@@ -1,23 +1,18 @@
-CONTAINER_NAME = docker_minishell_container
+.DEFAULT_GOAL = all
 
-all: build
-	@if [ $$(docker container ls -aq --filter "name=$(CONTAINER_NAME)") ]; then \
-		echo "Container $(CONTAINER_NAME) found. Removing..."; \
-		docker rm -f $(CONTAINER_NAME); \
-	fi
-	@docker compose -f ./srcs/docker-compose.yml run --name $(CONTAINER_NAME) minishell
+all:
+	@docker compose -f ./srcs/docker-compose.yml run --rm --name minishell_container minishell
 
 build:
 	@docker compose -f ./srcs/docker-compose.yml build
 
 down:
 	@docker compose -f ./srcs/docker-compose.yml down
-	@docker container rm -f $(CONTAINER_NAME) 
 
-re: fclean all
+clean:
+	@docker compose -f ./srcs/docker-compose.yml down --rmi local
 
 fclean: down
-	docker system prune -af
+	@docker system prune --all
 
-PHONY: all build down re fclean
-
+PHONY: all build down clean fclean

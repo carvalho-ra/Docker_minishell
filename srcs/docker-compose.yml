@@ -3,9 +3,7 @@ services:
     build:
       context: .
       dockerfile: ./requirements/app/Dockerfile
-    image: docker_minishell_image
-    container_name: docker_minishell_container
-    command: bash -c /minishell
+    image: minishell
     networks:
       - minishell
 
